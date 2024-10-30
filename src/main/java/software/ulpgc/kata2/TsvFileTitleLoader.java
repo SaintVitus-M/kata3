@@ -27,7 +27,7 @@ public class TsvFileTitleLoader implements TsvFileLoader {
     }
 
     private List<Title> load(BufferedReader br) throws IOException {
-        List<Title> titles = new ArrayList<Title>();
+        List<Title> titles = new ArrayList<>();
         br.readLine();
 
         while (true) {
