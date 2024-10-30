@@ -1,7 +1,9 @@
 package software.ulpgc.kata2;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -16,8 +18,11 @@ public class Main {
 
         List<Title> titles = TsvFileTitleLoader.with(new File(tsvPath)).load();
 
-        for (Title title : titles) {
-            System.out.println(title);
+        TitleStatistic stats = new TitleStartYearStatistic();
+        Map<String, Integer> map = stats.calculate(titles);
+
+        for(Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + "\t" + entry.getValue());
         }
     }
 }
