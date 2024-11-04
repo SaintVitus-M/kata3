@@ -1,4 +1,6 @@
-package software.ulpgc.kata2;
+package software.ulpgc.kata3.architecture.io;
+
+import software.ulpgc.kata3.architecture.model.Title;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,14 +10,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
-public class TsvFileTitleLoader implements TsvFileLoader {
+public class TsvFileTitleLoader implements TitleLoader {
     private final File file;
 
     public TsvFileTitleLoader(File file) {
         this.file = file;
     }
 
-    public static TsvFileLoader with(File file) {return new TsvFileTitleLoader(file);}
+    public static TitleLoader with(File file) {return new TsvFileTitleLoader(file);}
 
     @Override
     public List<Title> load() {

@@ -1,4 +1,4 @@
-package software.ulpgc.kata2;
+package software.ulpgc.kata3.architecture.model;
 
 import java.util.Arrays;
 
