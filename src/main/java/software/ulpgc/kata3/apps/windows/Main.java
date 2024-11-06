@@ -33,11 +33,15 @@ public class Main {
         ChartLoader loader = new TitleChartLoader(tStat.calculate(titles), cStat.calculate(titles));
 
         // Create the MainFrame where the chart will be visualized.
-        // Insert selector component into the MainFrame.
-        // Load a chart selected from the selector component.
         MainFrame mainFrame = new MainFrame();
+        
+        // Insert selector component into the MainFrame.
         mainFrame.put("select", new SelectStatisticCommand(mainFrame.selectStatisticDialog(), loader, mainFrame.chartDisplay()));
+
+        // Load a chart selected from the selector component.
         mainFrame.chartDisplay().show(loader.load(0));
+
+        // Set the MainFrame visible.
         mainFrame.setVisible(true);
     }
 }
